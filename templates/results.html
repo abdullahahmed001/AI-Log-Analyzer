@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Log Analyzer Results</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f5f6fa;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .full {
+            grid-column: span 2;
+        }
+
+        .error {
+            color: #e74c3c;
+        }
+
+        .warning {
+            color: #f39c12;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 12px;
+            margin-left: 5px;
+            background: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>📊 AI Log Analysis Dashboard</h1>
+
+<div class="container">
+
+    <!-- Summary -->
+    <div class="card">
+        <h2>📌 Summary</h2>
+        <p><strong>Total Errors:</strong> {{ results.error_count }}</p>
+        <p><strong>Total Warnings:</strong> {{ results.warning_count }}</p>
+        <p><strong>Total Lines:</strong> {{ results.total_lines }}</p>
+    </div>
+
+    <div class="card full">
+    <h2>📊 Error vs Warning Chart</h2>
+    <canvas id="logChart"></canvas>
+</div>
+
+    <!-- AI Insights -->
+    <div class="card">
+        <h2>🧠 AI Insights</h2>
+
+        <h4>Major Issues</h4>
+        <ul>
+            {% for issue in ai.major_issues %}
+                <li class="error">{{ issue }}</li>
+            {% endfor %}
+        </ul>
+
+        <h4>Recurring Failures</h4>
+        <ul>
+            {% for failure in ai.recurring_failures %}
+                <li>{{ failure }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Root Causes -->
+    <div class="card full">
+        <h2>🔍 Root Causes</h2>
+        <ul>
+            {% for cause in ai.root_causes %}
+                <li>{{ cause }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Recommendations -->
+    <div class="card full">
+        <h2>💡 Recommendations</h2>
+        <ul>
+            {% for rec in ai.recommendations %}
+                <li>{{ rec }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Raw Logs -->
+    <div class="card full">
+        <h2>🪵 Raw Logs</h2>
+
+        <h4>Errors</h4>
+        <ul>
+            {% for error in results.errors %}
+                <li class="error">{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+        <h4>Warnings</h4>
+        <ul>
+            {% for warning in results.warnings %}
+                <li class="warning">{{ warning }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('logChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Errors', 'Warnings'],
+        datasets: [{
+            label: 'Log Summary',
+            data: [
+                {{ results.error_count }},
+                {{ results.warning_count }}
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>

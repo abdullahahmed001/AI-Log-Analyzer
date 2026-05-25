@@ -1,0 +1,71 @@
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/bin/flask", line 10, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/flask/cli.py", line 1063, in main
+    cli.main()
+    ~~~~~~~~^^
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/click/core.py", line 1406, in main
+    rv = self.invoke(ctx)
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/click/core.py", line 1873, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/click/decorators.py", line 93, in new_func
+    return ctx.invoke(f, obj, *args, **kwargs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/flask/cli.py", line 911, in run_command
+    raise e from None
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/flask/cli.py", line 897, in run_command
+    app = info.load_app()
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/flask/cli.py", line 312, in load_app
+    app = locate_app(import_name, None, raise_if_not_found=False)
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/flask/cli.py", line 218, in locate_app
+    __import__(module_name)
+    ~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/app/__init__.py", line 2, in <module>
+    from flask_sqlalchemy import SQLAlchemy
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/flask_sqlalchemy/__init__.py", line 5, in <module>
+    from .extension import SQLAlchemy
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/flask_sqlalchemy/extension.py", line 9, in <module>
+    import sqlalchemy as sa
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/sqlalchemy/__init__.py", line 13, in <module>
+    from .engine import AdaptedConnection as AdaptedConnection
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/sqlalchemy/engine/__init__.py", line 18, in <module>
+    from . import events as events
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/sqlalchemy/engine/events.py", line 19, in <module>
+    from .base import Connection
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 30, in <module>
+    from .interfaces import BindTyping
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/sqlalchemy/engine/interfaces.py", line 38, in <module>
+    from ..sql.compiler import Compiled as Compiled
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/sqlalchemy/sql/__init__.py", line 14, in <module>
+    from .compiler import COLLECT_CARTESIAN_PRODUCTS as COLLECT_CARTESIAN_PRODUCTS
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py", line 61, in <module>
+    from . import crud
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/sqlalchemy/sql/crud.py", line 34, in <module>
+    from . import dml
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/sqlalchemy/sql/dml.py", line 34, in <module>
+    from . import util as sql_util
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/sqlalchemy/sql/util.py", line 46, in <module>
+    from .ddl import sort_tables as sort_tables  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/sqlalchemy/sql/ddl.py", line 30, in <module>
+    from .elements import ClauseElement
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py", line 808, in <module>
+    class SQLCoreOperations(Generic[_T_co], ColumnOperators, TypingOnly):
+    ...<472 lines>...
+                ...
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/typing.py", line 1257, in _generic_init_subclass
+    super(Generic, cls).__init_subclass__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/addison/Downloads/CMPE131 Project Test 2 M3/.venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py", line 1980, in __init_subclass__
+    raise AssertionError(
+    ...<2 lines>...
+    )
+AssertionError: Class <class 'sqlalchemy.sql.elements.SQLCoreOperations'> directly inherits TypingOnly but has additional attributes {'__static_attributes__', '__firstlineno__'}.        
