@@ -23,7 +23,6 @@ An AI-powered log analysis tool that parses application logs, detects errors and
 ---
 
 ## 📁 Project Structure
-## 📁 Project Structure
 
 ```text
 ai-log-analyzer/
