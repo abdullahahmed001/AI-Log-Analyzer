@@ -23,20 +23,33 @@ An AI-powered log analysis tool that parses application logs, detects errors and
 ---
 
 ## 📁 Project Structure
+
 ai-log-analyzer/
 │
-├── app.py # Flask backend
-├── parser.py # Log parsing logic
-├── ai_service.py # AI integration layer
-├── templates/
-│ ├── index.html # Upload page
-│ └── results.html # Dashboard UI
-├── uploads/ # Uploaded logs
-├── static/ # CSS/JS assets
-└── requirements.txt
+├── app.py                     # Main Flask backend server
+├── parser.py                  # Log parsing engine
+├── ai_service.py              # AI-powered analysis service
+├── test_ai.py                 # AI service testing script
+├── requirements.txt           # Python dependencies
+├── README.md                  # Project documentation
+├── .env                       # Environment variables / API keys
+├── .gitignore                 # Git ignored files
+│
+├── uploads/                   # Uploaded test log files
+│   ├── 000003.log
+│   ├── avl.txt
+│   ├── BinaryTree.txt
+│   ├── message.txt
+│   ├── sample.log.rtf
+│   ├── sample.rtf
+│   └── test.txt
+│
+├── templates/                 # Frontend HTML templates
+│   ├── index.html             # Upload page
+│   └── results.html           # Dashboard UI
+│
+└── static/                    # Static assets (CSS/JS/images)
 
-
----
 
 ## ⚙️ How It Works
 
