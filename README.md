@@ -23,7 +23,6 @@ An AI-powered log analysis tool that parses application logs, detects errors and
 ---
 
 ## 📁 Project Structure
-
 ai-log-analyzer/
 │
 ├── app.py                     # Main Flask backend server
@@ -49,8 +48,6 @@ ai-log-analyzer/
 │   └── results.html           # Dashboard UI
 │
 └── static/                    # Static assets (CSS/JS/images)
-
-
 ## ⚙️ How It Works
 
 1. User uploads a log file
